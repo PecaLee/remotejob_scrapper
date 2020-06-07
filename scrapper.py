@@ -33,13 +33,11 @@ def remoteok_scrapper(keyword):
             ".company.position.company_and_position h2")[0].text
         job_link = result.find("a", {"class": "preventLink"}).get("href")
         company = result.select(".companyLink h3")[0].text
-
         jobs = {
             "title": job_title,
             "company": company,
             "link": remoteok + job_link
         }
-
         db.append(jobs)
 
     return db
@@ -57,13 +55,11 @@ def stack_scrapper(keyword):
         job_title = job.text
         job_link = job.get("href")
         company = result.select("h3 span:first-child")[0].text.strip()
-
         jobs = {
             "title": job_title,
             "company": company,
             "link": stack + job_link
         }
-
         db.append(jobs)
 
     return db
@@ -85,13 +81,11 @@ def wework_scrapper(keyword):
         else:
             job_link = result.select(".tooltip ~ a")[0].get("href")
         company = result.find("span", {"class": "company"}).text
-
         jobs = {
             "title": job_title,
             "company": company,
             "link": wework + job_link
         }
-
         db.append(jobs)
 
     return db

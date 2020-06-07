@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+        <link rel="stylesheet" href="../static/css/style.css" />
+        <title>Search remoteJob!</title>
+    </head>
+    <body>
+        <header>
+            <h1>Remote Job finder</h1>
+        </header>
+        <main>
+            <div class="summary">
+                {% if results != None %}
+                <h3>{{results|length}} {{keyword}} jobs found.</h3>
+                <h4><a href="/export?searchJobs={{keyword}}" method="get">Export to CSV</a></h4>
+                <h5><a href="/">← Go back</a></h5>
+                {% else %}
+                <h3>There is no result.</h3>
+                <h5><a href="/">← Go back</a></h5>
+                {% endif %}
+            </div>
+            <div class="result">
+                <div class="inner">
+                    {% if results != None %}
+                    {% for result in results %}
+                    <h3>{{result["title"]}}</h3>
+                    <h3>{{result["company"]}}</h3>
+                    <h3><a href="{{result["link"]}}">apply</a></h3>
+                    <hr>
+                    {% endfor %}
+                    {% else %}
+                    {% endif %}
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

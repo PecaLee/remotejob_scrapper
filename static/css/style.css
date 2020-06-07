@@ -1,0 +1,86 @@
+@import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-image: url("https://source.unsplash.com/1600x900/?programming");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    font-weight: 700;
+    font-size: 2.6rem;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 900px;
+    height: 200px;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 248, 220, 0.3);
+}
+
+.container h3 {
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input:focus {
+    all: unset;
+}
+
+input,
+button {
+    all: unset;
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+input {
+    border-bottom: #0a0a0a 1px solid;
+    padding: 2px;
+    background-color: rgba(190, 190, 190, 0.3);
+}
+
+button {
+    align-self: flex-end;
+    width: 20%;
+    background-color: rgb(0, 31, 71);
+    color: white;
+    margin-top: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}

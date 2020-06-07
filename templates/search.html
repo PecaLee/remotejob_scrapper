@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+        <link rel="stylesheet" href="../static/css/style.css" />
+        <title>Search remoteJob!</title>
+    </head>
+    <body>
+        <header>
+            <h1>Remote Job finder</h1>
+        </header>
+        <main>
+            <div class="container">
+                <h3>search by term:</h3>
+                <form action="/result">
+                    <input
+                        autocomplete="on"
+                        type="text"
+                        name="searchJobs"
+                        id="searchJobs"
+                        method="get"
+                        placeholder="i.e python"
+                    />
+                    <button type="submit">Find my job</button>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>
