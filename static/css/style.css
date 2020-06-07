@@ -1,8 +1,51 @@
 @import "reset.css";
+@import "result.css";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 
 body {
     font-family: "Open Sans", sans-serif;
+    color: white;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.7rem;
+}
+
+h5 {
+    font-size: 1.4rem;
+}
+
+a {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body::before {
+    content: "Background image from Unsplash";
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.7rem;
+    z-index: 2;
+    right: 10px;
+    bottom: 10px;
+    position: absolute;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    background-size: cover;
+    background-attachment: fixed;
     background-image: url("https://source.unsplash.com/1600x900/?programming");
 }
 
@@ -34,15 +77,15 @@ main {
     justify-content: space-between;
 }
 
-.container::after {
+main::after {
     content: "";
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     z-index: -1;
     top: 0;
     left: 0;
-    background-color: rgba(255, 248, 220, 0.3);
+    background-color: rgba(0, 2, 34, 0.45);
 }
 
 .container h3 {
@@ -67,15 +110,33 @@ button {
 }
 
 input {
-    border-bottom: #0a0a0a 1px solid;
+    border-bottom: white 1px solid;
     padding: 2px;
     background-color: rgba(190, 190, 190, 0.3);
+    transition: background-color 0.5s ease-in-out;
+}
+
+input::placeholder {
+    color: white;
+}
+
+input:focus {
+    border-bottom: white 1px solid;
+    padding: 2px;
+    background-color: rgba(190, 190, 190, 0.8);
+    transition: background-color 0.5s ease-in-out;
+    color: black;
+    font-weight: 600;
+}
+
+input:focus::placeholder {
+    color: rgba(255, 255, 255, 0.3);
 }
 
 button {
     align-self: flex-end;
     width: 20%;
-    background-color: rgb(0, 31, 71);
+    background-color: rgb(11, 72, 151);
     color: white;
     margin-top: 10px;
     padding: 5px;
@@ -83,4 +144,8 @@ button {
     justify-content: center;
     align-items: center;
     border-radius: 8px;
+}
+
+button:active {
+    transform: scale(0.98);
 }

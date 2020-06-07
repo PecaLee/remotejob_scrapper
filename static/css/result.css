@@ -1,0 +1,17 @@
+.summary {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.result .inner {
+    margin-bottom: 30px;
+}
+
+.result .inner h3 {
+    font-size: 1.6rem;
+    margin: 10px 0;
+}

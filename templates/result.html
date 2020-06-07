@@ -4,7 +4,6 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-        <link rel="stylesheet" href="../static/css/style.css" />
         <title>Search remoteJob!</title>
     </head>
     <body>
@@ -23,17 +22,17 @@
                 {% endif %}
             </div>
             <div class="result">
-                <div class="inner">
                     {% if results != None %}
                     {% for result in results %}
+                    <div class="inner">
                     <h3>{{result["title"]}}</h3>
                     <h3>{{result["company"]}}</h3>
                     <h3><a href="{{result["link"]}}">apply</a></h3>
                     <hr>
+                    </div>
                     {% endfor %}
                     {% else %}
                     {% endif %}
-                </div>
             </div>
         </main>
     </body>
